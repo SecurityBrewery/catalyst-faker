@@ -12,7 +12,6 @@ import (
 
 	"github.com/SecurityBrewery/catalyst/generated/model"
 	"github.com/SecurityBrewery/catalyst/generated/pointer"
-	"github.com/SecurityBrewery/catalyst/role"
 )
 
 func main() {
@@ -45,20 +44,13 @@ type Generator struct {
 	key string
 }
 
-var analyst = role.Strings([]role.Role{
-	role.AutomationRead, role.CurrentuserdataRead, role.CurrentuserdataWrite,
-	role.CurrentuserRead, role.GroupRead, role.PlaybookRead, role.RuleRead,
-	role.SettingsRead, role.TemplateRead, role.TicketRead, role.TicketWrite,
-	role.TickettypeRead, role.UserRead, role.DashboardRead,
-})
-
 var users = []*model.UserForm{
-	{ID: "alice", Blocked: false, Roles: analyst},
-	{ID: "bob", Blocked: false, Roles: analyst},
-	{ID: "carol", Blocked: false, Roles: analyst},
-	{ID: "dave", Blocked: false, Roles: analyst},
+	{ID: "alice", Blocked: false, Roles: []string{"analyst"}},
+	{ID: "bob", Blocked: false, Roles: []string{"analyst"}},
+	{ID: "carol", Blocked: false, Roles: []string{"analyst"}},
+	{ID: "dave", Blocked: false, Roles: []string{"analyst"}},
 
-	{ID: "eve", Blocked: false, Roles: []string{role.Admin}},
+	{ID: "eve", Blocked: false, Roles: []string{"admin"}},
 }
 
 // var settings = []*models.Setting{
