@@ -2,8 +2,6 @@ module github.com/SecurityBrewery/catalyst-faker
 
 go 1.19
 
-replace github.com/xeipuuv/gojsonschema => github.com/warjiang/gojsonschema v1.2.1-0.20210329105853-aa9f9a8cfec7
-
 require (
 	github.com/SecurityBrewery/catalyst v0.9.2
 	github.com/brianvoe/gofakeit/v6 v6.9.0
