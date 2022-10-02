@@ -26,6 +26,9 @@ func main() {
 		url: os.Args[1],
 		key: os.Args[2],
 	}
+
+	log.Println("generate dummy data", g.url, len(g.key))
+
 	if err := g.userDummyData(); err != nil {
 		log.Fatal(err)
 	}
